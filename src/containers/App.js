@@ -36,6 +36,14 @@ const entries = [
 	];
 	
 class App extends Component {
+	constructor(props) {
+		super(props);		
+		this.state = {
+			entries
+		};
+	}
+	
+	
   render() {
     return (
        <div className="App">
@@ -47,13 +55,32 @@ class App extends Component {
 				</Col>
 				
 				<Col md={8}>
-					<JournalForm />
+					<JournalForm entries={this.state.entries} createJournal={this.createJournal.bind(this)} />
 				</Col>
 				</Row>
 			</Container>
       </div>
     );
   }
+  
+  createJournal(journal) {
+        this.state.entries.push({
+            journal
+           });
+        this.setState({ entries: this.state.entries });
+    }
+	
+	saveJournal(oldJournal, newJournal) {
+        const foundEntry = _.find(this.state.entries, entry => entry.journal === oldJournal);
+        foundEntry.journal = newJournal;
+        this.setState({ entries: this.state.entries });
+    }
+
+    deleteJournal(journalToDelete) {
+        _.remove(this.state.entries, entry => entry.journal === journalToDelete);
+        this.setState({ entries: this.state.entries });
+    }
+	
 }
 
 export default App;
