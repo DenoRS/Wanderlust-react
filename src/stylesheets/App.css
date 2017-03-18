@@ -6,7 +6,6 @@
 	height:300px;
 	background-image: url("./l2.jpg");
 	background-size: 100% 100%;
-	color:white;
 
 }
 
@@ -22,13 +21,17 @@
 
 .App-header {
   background-color: #222;
-  height: 300px;
+  height: 150px;
   padding: 20px;
   color: white;
 }
 
 .App-intro {
   font-size: large;
+}
+
+.dateTitle {
+	color:white;
 }
 
 @keyframes App-logo-spin {

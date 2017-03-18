@@ -81,8 +81,8 @@ class JournalForm extends Component {
     }
 	
 	validateInput(journal) {
-            return 'Please enter a journal entry.';
         if (!journal) {
+            return 'Please enter a journal entry.';
         } else if (_.find(this.props.entries, entry => entry.journal === journal)) {
             return 'Entry already exists.';
         } else {

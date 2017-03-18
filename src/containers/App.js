@@ -6,6 +6,7 @@ import Header from '../components/Header.js';
 import Date from '../components/date.js';
 
 import JournalForm from '../components/JournalForm.js';
+import JournalList from '../components/JournalList.js';
 
 import _ from 'lodash';
 
@@ -37,7 +38,8 @@ const entries = [
 	
 class App extends Component {
 	constructor(props) {
-		super(props);		
+		super(props);
+		
 		this.state = {
 			entries
 		};
@@ -51,7 +53,13 @@ class App extends Component {
 			<Container>
                 <Row>
 				<Col md={4}>
-					<p> Testing </p>           
+						
+                <JournalList
+                    entries={this.state.entries}
+                   
+                    saveJournal={this.saveJournal.bind(this)}
+                    deleteJournal={this.deleteJournal.bind(this)}
+				/>          
 				</Col>
 				
 				<Col md={8}>
@@ -63,14 +71,17 @@ class App extends Component {
     );
   }
   
-  createJournal(journal) {
+
+
+    createJournal(journal) {
         this.state.entries.push({
-            journal
-           });
+            journal,
+            isCompleted: false
+        });
         this.setState({ entries: this.state.entries });
     }
-	
-	saveJournal(oldJournal, newJournal) {
+
+    saveJournal(oldJournal, newJournal) {
         const foundEntry = _.find(this.state.entries, entry => entry.journal === oldJournal);
         foundEntry.journal = newJournal;
         this.setState({ entries: this.state.entries });
