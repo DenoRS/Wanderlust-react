@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
+import Date from './date.js';
 //import {Navbar, NavItem} from 'react-materialize';
 import {
   Collapse,
@@ -42,7 +43,7 @@ return (
                 </p>
 				
 		
-			
+				<Date />
               </Col>
             </Row>
 		 </Container>
