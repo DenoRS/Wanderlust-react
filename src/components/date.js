@@ -6,7 +6,8 @@ class Date extends Component {
         return ( 
             <div className="dateTitle">
                 <h2>{Moment().format('dddd')}</h2>
-                <p>{Moment().format('LL')}</p>
+                <p>{Moment().format('LL')} </p>
+				<p>{Moment().format('HH:mm')}</p>
             </div>
         );
     }

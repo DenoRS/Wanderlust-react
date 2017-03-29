@@ -1,9 +1,10 @@
 .App {
   text-align: center;
+  font-size:140%;
 }
 
 .Header {
-	height:300px;
+	height:350px;
 	background-image: url("./l2.jpg");
 	background-size: 100% 100%;
 
@@ -32,6 +33,7 @@
 
 .dateTitle {
 	color:white;
+	
 }
 
 @keyframes App-logo-spin {
@@ -44,6 +46,15 @@
 	min-width:200px;
 	min-height:200px;
 	color:red;
-	
-	
+}
+
+.navibar2 {
+	background-color:black;
+	color:white;
+	margin-bottom:-25px;
+	font-size:15px;
+}
+
+.brand2 {
+	font-size:25px;
 }

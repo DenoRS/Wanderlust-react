@@ -19,6 +19,7 @@ class JournalList extends Component {
             <table>
                
                 <tbody>
+					{this.props.children}
                     {this.renderItems()}
                 </tbody>
             </table>

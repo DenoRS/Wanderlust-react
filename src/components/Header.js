@@ -1,7 +1,27 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router';
+//import {Link, IndexLink} from 'react-router';
 import Date from './date.js';
+import Routerst from './Routerstf.js'
 //import {Navbar, NavItem} from 'react-materialize';
+// <Route exact path="/" component={App}/>
+	//	 <Route path="/about" component={About}/>
+	//	 <Route path="/repos" component={Repos}/>
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  IndexLink,
+  IndexRoute
+} 
+from 'react-router-dom'
+
+import App from '../containers/App';
+import Layout from '../containers/Layout';
+import About from '../modules/About';
+import Repos from '../modules/Repos';
+
+
+
 import {
   Collapse,
   Navbar,
@@ -19,14 +39,63 @@ import {
   TextArea
 } from 'reactstrap';
 
+import routes from '../modules/routes.js';
 
 class Header extends Component {
+	constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
+  
+  
  render(){
 return (
-<div className="NavHead">
+  <div className="NavHead">
+   <Router >
+ <div>
+
+        <Navbar color="faded" light toggleable>
+          <NavbarToggler right onClick={this.toggle} />
+          <NavbarBrand href="/">WanderLust</NavbarBrand>
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink><Link to='/'>{'Home'}</Link> {" | "}</NavLink> 
+              </NavItem>
+              <NavItem>
+                <NavLink><Link to='/about'>{'About Us'}</Link> {" | "}</NavLink> 
+              </NavItem>
+              <NavItem>
+                <NavLink><Link to='/repos'>{'Repos'}</Link> {" | "}</NavLink> 
+              </NavItem>
+              <NavItem>
+                <NavLink href="https://github.com/DenoRS">Github</NavLink>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Navbar>
+
+       
+               
+               <Route path="/about" component={About}/>
+               <Route path="/repos" component={Repos}/>
+            
+      
 
 
-        <Jumbotron className="Header">
+      </div>
+      </Router>
+
+      <Jumbotron className="Header">
           <Container>
             <Row>
               <Col md={12}>
@@ -36,21 +105,27 @@ return (
                     tag="a"
                     color="success"
                     size="large"
-                    href="http://reactstrap.github.io"
+                    href="https://github.com/DenoRS"
                     target="_blank">
-                    View Reactstrap Docs
+                    View my Github
                   </Button>
                 </p>
-				
-		
-				<Date />
+        
+    
+        <Date />
               </Col>
             </Row>
-		 </Container>
+     </Container>
 </Jumbotron>
+ {this.props.children}
+
 </div>
-)
+);
+
+
 }
+
+
 }
 
 export default Header;

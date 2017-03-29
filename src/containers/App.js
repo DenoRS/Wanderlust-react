@@ -4,11 +4,17 @@ import '../stylesheets/App.css';
 
 import Header from '../components/Header.js';
 import Date from '../components/date.js';
+import About from '../modules/About';
+import Repos from '../modules/Repos';
 
 import JournalForm from '../components/JournalForm.js';
 import JournalList from '../components/JournalList.js';
-
+import { Router, Route, hashHistory} from 'react-router';
 import _ from 'lodash';
+
+import Routese from '../modules/routes.js';
+import Layout from './Layout';
+
 
 import {
   Collapse,
@@ -27,70 +33,33 @@ import {
   TextArea
 } from 'reactstrap';
 
-const entries = [
-	{
-		journal: 'Make React Great Again'
-	},
-	{
-		journal: 'Eat Dinner'
-	}
-	];
-	
+
 class App extends Component {
-	constructor(props) {
-		super(props);
+  constructor(props) {
+	super(props);
+	this.state = {
 		
-		this.state = {
-			entries
-		};
-	}
-	
+	};
+}
 	
   render() {
+
     return (
+	
        <div className="App">
         <Header /> 
+                
+			
 			<Container>
-                <Row>
-				<Col md={4}>
-						
-                <JournalList
-                    entries={this.state.entries}
-                   
-                    saveJournal={this.saveJournal.bind(this)}
-                    deleteJournal={this.deleteJournal.bind(this)}
-				/>          
-				</Col>
-				
-				<Col md={8}>
-					<JournalForm entries={this.state.entries} createJournal={this.createJournal.bind(this)} />
-				</Col>
-				</Row>
+			<Layout />
+
+       
 			</Container>
+   
+			
       </div>
     );
   }
-  
-
-
-    createJournal(journal) {
-        this.state.entries.push({
-            journal,
-            isCompleted: false
-        });
-        this.setState({ entries: this.state.entries });
-    }
-
-    saveJournal(oldJournal, newJournal) {
-        const foundEntry = _.find(this.state.entries, entry => entry.journal === oldJournal);
-        foundEntry.journal = newJournal;
-        this.setState({ entries: this.state.entries });
-    }
-
-    deleteJournal(journalToDelete) {
-        _.remove(this.state.entries, entry => entry.journal === journalToDelete);
-        this.setState({ entries: this.state.entries });
-    }
 	
 }
 

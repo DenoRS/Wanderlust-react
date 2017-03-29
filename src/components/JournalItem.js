@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import FontAwesome from 'react-fontawesome';
 
 class JournalItem extends Component {
   constructor(props) {
@@ -33,16 +34,18 @@ class JournalItem extends Component {
         if (this.state.isEditing) {
             return (
                 <td>
-                    <button onClick={this.onSaveClick.bind(this)}>Save</button>
+                    <button onClick={this.onSaveClick.bind(this)}>#x2713;</button>
                     <button onClick={this.onCancelClick.bind(this)}>Cancel</button>
                 </td>
+				
+			
             );
         }
 
         return (
             <td>
                 <button onClick={this.onEditClick.bind(this)}>Edit</button>
-                <button onClick={this.props.deleteJournal.bind(this, this.props.journal)}>Delete</button>
+                <button type="button" className="btn btn-xs btn-danger img-circle" onClick={this.props.deleteJournal.bind(this, this.props.journal)}>Delete</button>
             </td>
         );
     }
