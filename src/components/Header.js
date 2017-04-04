@@ -19,6 +19,7 @@ import App from '../containers/App';
 import Layout from '../containers/Layout';
 import About from '../modules/About';
 import Repos from '../modules/Repos';
+import Contact from '../modules/Contact';
 
 
 
@@ -73,7 +74,10 @@ return (
                 <NavLink><Link to='/'>{'Home'}</Link> {" | "}</NavLink> 
               </NavItem>
               <NavItem>
-                <NavLink><Link to='/about'>{'About Us'}</Link> {" | "}</NavLink> 
+                <NavLink><Link to='/about'>{'About'}</Link> {" | "}</NavLink> 
+              </NavItem>
+			  <NavItem>
+                <NavLink><Link to='/contact'>{'Contact'}</Link> {" | "}</NavLink> 
               </NavItem>
               <NavItem>
                 <NavLink><Link to='/repos'>{'Repos'}</Link> {" | "}</NavLink> 
@@ -110,7 +114,9 @@ return (
 
    
              <div className="childComps">
-   <Route path="/about" component={About}/>
+				
+				<Route path="/contact" component={Contact}/>
+			   <Route path="/about" component={About}/>
                <Route path="/repos" component={Repos}/>
 			   </div>
 
