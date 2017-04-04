@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "availity-reactstrap-validation": "^1.4.1",
     "bootstrap": "^4.0.0-alpha.6",
+    "material-ui": "^0.17.1",
     "moment": "^2.17.1",
     "moment-timezone": "^0.5.11",
     "react": "^15.4.2",
