@@ -31,6 +31,7 @@ import {
   NavItem,
   NavLink,
   Container,
+  Form,
   Row,
   Col,
   Jumbotron,
@@ -63,7 +64,7 @@ return (
    <Router >
  <div>
 
-        <Navbar color="faded" light toggleable>
+        <Navbar light toggleable>
           <NavbarToggler right onClick={this.toggle} />
           <NavbarBrand href="/">WanderLust</NavbarBrand>
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -80,22 +81,11 @@ return (
               <NavItem>
                 <NavLink href="https://github.com/DenoRS">Github</NavLink>
               </NavItem>
+			 
             </Nav>
           </Collapse>
-        </Navbar>
-
-       
-               
-               <Route path="/about" component={About}/>
-               <Route path="/repos" component={Repos}/>
-            
-      
-
-
-      </div>
-      </Router>
-
-      <Jumbotron className="Header">
+        </Navbar>  
+ <Jumbotron className="Header">
           <Container>
             <Row>
               <Col md={12}>
@@ -117,9 +107,20 @@ return (
             </Row>
      </Container>
 </Jumbotron>
- {this.props.children}
 
+   
+             <div className="childComps">
+   <Route path="/about" component={About}/>
+               <Route path="/repos" component={Repos}/>
+			   </div>
+
+      </div>
+	  
+      </Router>
+
+    
 </div>
+
 );
 
 

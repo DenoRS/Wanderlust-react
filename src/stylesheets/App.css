@@ -58,3 +58,82 @@
 .brand2 {
 	font-size:25px;
 }
+
+
+.social:hover {
+     -webkit-transform: scale(0.6);
+     -moz-transform:scale(0.6);
+     -o-transform: scale(0.6);
+ }
+ .social {
+     -webkit-transform: scale(0.6);
+     /* Browser Variations: */
+     
+     -moz-transform: scale(0.6);
+     -o-transform: scale(0.6);
+     -webkit-transition-duration: 0.5s;
+     -moz-transition-duration: 0.5s;
+     -o-transition-duration: 0.5s;
+ }
+
+/*
+    Multicoloured Hover Variations
+*/
+ 
+ #social-fb:hover {
+     color: #3B5998;
+ }
+ #social-tw:hover {
+     color: #4099FF;
+ }
+ #social-gp:hover {
+     color: #d34836;
+ }
+ #social-em:hover {
+     color: #f39c12;
+ }
+ 
+ .footer {
+	 margin-top:25px;
+	 background-color:grey;
+ }
+ 
+ .tdclass {
+	 background-color:black;
+ }
+ #cancelbtn {
+	 background-color:brown;
+	 color:white;
+	 margin-top:2px;
+ }
+ 
+ #editbtn {
+	 background-color:orange;
+	 color:white;
+	 margin-top:2px;
+ }
+ 
+ #deletebtn {
+	 margin-top:2px;
+	 background-color:red;
+	 color:white;
+	 
+ }
+ 
+ #savebtn {
+	 margin-top:2px;
+	 background-color:green;
+	 color:white;
+ }
+ 
+ .NavHead {
+	 background-color:grey;
+ }
+ 
+NavLink {
+	 color:black;
+ }
+ 
+ .childComps {
+	 background-color:white;
+ }

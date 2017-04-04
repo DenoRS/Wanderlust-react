@@ -1,5 +1,22 @@
 import React, {Component} from 'react';
 import FontAwesome from 'react-fontawesome';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  Container,
+  Form,
+  Row,
+  Col,
+  Jumbotron,
+  Button,
+  TextInput,
+  TextArea
+} from 'reactstrap';
 
 class JournalItem extends Component {
   constructor(props) {
@@ -16,9 +33,9 @@ class JournalItem extends Component {
         if (this.state.isEditing) {
             return (
                 <td>
-                    <form onSubmit={this.onSaveClick.bind(this)}>
-                        <input type="text" defaultValue={journal} ref="editInput" />
-                    </form>
+                    <Form onSubmit={this.onSaveClick.bind(this)}>
+                        <input className="form-control mr-sm-2" type="text" defaultValue={journal} ref="editInput" />
+                    </Form>
                 </td>
             );
         }
@@ -33,20 +50,23 @@ class JournalItem extends Component {
     renderActionsSection() {
         if (this.state.isEditing) {
             return (
+			<Col md ={2}>
                 <td>
-                    <button onClick={this.onSaveClick.bind(this)}>#x2713;</button>
-                    <button onClick={this.onCancelClick.bind(this)}>Cancel</button>
+                    <button onClick={this.onSaveClick.bind(this)}className="btn btn-xs fa fa-check" id="savebtn"></button>
+                    <button onClick={this.onCancelClick.bind(this)} className="btn btn-xs fa fa-ban" id="cancelbtn"></button>
                 </td>
 				
-			
+			</Col>
             );
         }
 
         return (
+		<Col md ={2}>
             <td>
-                <button onClick={this.onEditClick.bind(this)}>Edit</button>
-                <button type="button" className="btn btn-xs btn-danger img-circle" onClick={this.props.deleteJournal.bind(this, this.props.journal)}>Delete</button>
+                <button onClick={this.onEditClick.bind(this)} className="btn btn-xs fa fa-pencil" id="editbtn"></button>
+                <button type="button" className="btn btn-xs fa fa-times" id ="deletebtn" onClick={this.props.deleteJournal.bind(this, this.props.journal)}></button>
             </td>
+			</Col>
         );
     }
 
