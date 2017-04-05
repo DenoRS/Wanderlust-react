@@ -1,34 +1,67 @@
 # Assignment 1 - ReactJS app.
 
-Name: ... your name ...
+Name: Dennis Petcu
+Id: 20063591
 
 ## Overview.
-...... A statement of the app concept and objectives (about a half-page) ........
+The concept of this web app is for users to save their travel/holiday memories online and be able to retrieve past entries.
+The web app uses a Form to take in the data entered and displays it in a table list. From here, the user can choose to edit, cancel, or delete the desired journal entry.
+The users current date and time (based on system date and time) is displayed in the header.
 
-
- . . . . . List of user features (excluding user registration and authentication) . . . . 
+Users are also able to fill out a Contact form that basically saves the users inputs and displays it in a list. This form uses validation for each input.
  
- + Feature 1
- + Feature 2
- + Feature 3
- + etc
- + etc
+ + Create Journal Entry (currently only uses the title of the entry).
+ + Display Journal Entries in a list.
+ + Edit Journal Entry.
+ + Delete Journal Entry.
+ + Retrieve Current Date and Time using Reactjs Moment.
+ + Contact Form that uses validation to display error inputs to user. This form generates a list of the users inputs.
+ + Navigation drawer linking to other pages within the web app.
+ + Footer with buttons that link to social sites such as Facebook, Twitter, Gmail and Email.
 
 ## Installation requirements.
-. . . .  List of software used to develop the app . . . . . . . 
-+ ReactJS v15.3.0
-+ Bootstrap 3
+
++ ReactJS v15.4.2
++ Bootstrap 4
 + create-react-app tool
-+ etc
++ npm install --save react-router
++ npm install --save reactstrap react-addons-transition-group react-addons-css-transition-group react react-dom
++ npm install react-virtualized --save
++ npm install --save availity-reactstrap-validation
++ npm install --save material-ui
++ npm install --save react-materialize
++ npm install --save moment moment-timezone react-moment
++ npm install --save react-fontawesome
 + etc 
 
-. . . . . . Also, explain (to a third party) what steps one must take to run your app after cloning it from the repository, e.g. any non-standard software installation; any environment setup; how to start app; where to view app in browser . . . . . . . At its simplest this may just be: npm install + npm start
+## Cloning/Starting App
+ git clone https://github.com/DenoRS/Wanderlust-react.git
+ npm install 
+ npm start
+ 
+ NOTE: This runs off http://localhost:3000/
 
 ## Data Model Design.
 
-Diagram of app's data model (see example below) AND/OR a sample of the test data used (JSON or equivalent).
+Diagram of app's data model (see example below) AND a sample of the test data used (JSON).
 
-![][image1]
+{
+		journal: 'Journey to Cliffs of Moher'
+	},
+	{
+		journal: 'Trip to Italy'
+	},
+  {
+    journal: 'Giants Causeway'
+  },
+  {
+    journal: 'Scuba diving'
+  },
+  {
+    journal: 'Parachuting today, went great'
+  }
+  
+![][datamodel]
 
 Use meaningful sample data. Briefly explain any non-trivial issues.
 
@@ -36,32 +69,88 @@ Use meaningful sample data. Briefly explain any non-trivial issues.
 
 A diagram showing the app's hierarchical component design (see example below). 
 
-![][image2]
+![][hierarchial]
 
 ## UI Design.
 
-. . . . . Screenshots of app's views (see example below) with appropriate captions (user regeneration and login views, if implemented, can be omitted) . . . . . . . 
+Homepage View.
+![][homepage]
 
-![][image3]
+Top Navigation Bar.
+![][navbar]
+
+Jumbrotron Header with Background Image.
+![][header]
+
+Footer with Social button links.
+![][footer]
+
+List component with Journal Items + Data model.
+![][journallist]
+
+Journal Form with two Inputs (Title and Description)
+![][journalform]
+
+Journal Entry added to List component from input from Journal Form.
+![][listadd]
+
+Removed Journal Entry from List.
+![][listdelete]
+
+Editing Journal Entry.
+![][listedit]
+
+Saved the Edit to List.
+![][listedited]
+
+About Page view with just text.
+![][about]
+
+Contact Page view with Contact Form and output.
+![][contact]
+
+Contact Page with invalid validation.
+![][contactinvalid]
+
+Reference page with references of sites used in construction of this web app.
+![][references]
 
 ## Routing.
-. . . . List each route supported and state the associated view . . . . . 
 
-+ /foos - displays all published foos
-+ /foos/:id - detail view of a particular foo (:id)
-+ etc
-+ etc
++ / - displays the homepage (Journal Form and List)
++ /about - view with sample text.
++ /contact - View with Contact form and validation.
++ /repos - View with references of sites.
 
 ## Extra features
 
-. . . . . Briefly explain any non-standard features, functional or non-functional (e.g. user registration, authentication) developed for the app . . . . . .  
-
+A Login/Authentication system is described in the web app, however it is not implemented correctly for use.
+An Avatar of the users profile image using ReactJs Avatar is also described, but not fully implemented as Login did not work.
+Date and Time is displayed to the user using ReactJS Moment.
 ## Independent learning.
 
-. . . . . State the non-standard aspects of Angular (or other related technologies) that you researched and applied in this assignment . . . . .  
++ Researched the methods to implement the newer version of ReactJS
++ Login
++ Date
++ Avatar
++ Reactstrap Components
 
 
+[datamodel]: ./screenshots/datamodel.png
+[hierarchial]: ./screenshots/hierarchicaldesign.jpg
+[homepage]: ./screenshots/Homepage.png
+[navbar]: ./screenshots/NavBar.png
+[header]: ./screenshots/Header.png
+[footer]: ./screenshots/SocialFooter.png
+[journallist]: ./screenshots/JournalList.png
+[journalform]: ./screenshots/JournalForm.png
+[listadd]: ./screenshots/ListAdd.png
+[listdelete]: ./screenshots/JournalListDelete.png
+[listedit]: ./screenshots/Editing.png
+[listedited]: ./screenshots/EditWorks.png
 
-[image1]: ./model.png
-[image2]: ./design.jpg
-[image3]: ./screen.png
+[about]: ./screenshots/AboutPage.png
+[contact]: ./screenshots/ContactListWResult.png
+[contactinvalid]: ./screenshots/ContactwInvalid.png
+[references]: ./screenshots/References.png
+
