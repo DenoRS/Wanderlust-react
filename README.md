@@ -74,45 +74,59 @@ A diagram showing the app's hierarchical component design (see example below).
 ## UI Design.
 
 Homepage View.
+
 ![][homepage]
 
 Top Navigation Bar.
+
 ![][navbar]
 
 Jumbrotron Header with Background Image.
+
 ![][header]
 
 Footer with Social button links.
+
 ![][footer]
 
 List component with Journal Items + Data model.
+
 ![][journallist]
 
 Journal Form with two Inputs (Title and Description)
+
 ![][journalform]
 
 Journal Entry added to List component from input from Journal Form.
+
 ![][listadd]
 
 Removed Journal Entry from List.
+
 ![][listdelete]
 
 Editing Journal Entry.
+
 ![][listedit]
 
 Saved the Edit to List.
+
 ![][listedited]
 
 About Page view with just text.
+
 ![][about]
 
 Contact Page view with Contact Form and output.
+
 ![][contact]
 
 Contact Page with invalid validation.
+
 ![][contactinvalid]
 
 Reference page with references of sites used in construction of this web app.
+
 ![][references]
 
 ## Routing.
@@ -138,19 +152,19 @@ Date and Time is displayed to the user using ReactJS Moment.
 
 [datamodel]: ./screenshots/datamodel.png
 [hierarchial]: ./screenshots/hierarchicaldesign.jpg
-[homepage]: ./screenshots/Homepage.png
-[navbar]: ./screenshots/NavBar.png
-[header]: ./screenshots/Header.png
+[homepage]: ./screenshots/Homepage.PNG
+[navbar]: ./screenshots/NavBar.PNG
+[header]: ./screenshots/Header.PNG
 [footer]: ./screenshots/SocialFooter.png
-[journallist]: ./screenshots/JournalList.png
-[journalform]: ./screenshots/JournalForm.png
-[listadd]: ./screenshots/ListAdd.png
-[listdelete]: ./screenshots/JournalListDelete.png
-[listedit]: ./screenshots/Editing.png
-[listedited]: ./screenshots/EditWorks.png
+[journallist]: ./screenshots/JournalList.PNG
+[journalform]: ./screenshots/JournalForm.PNG
+[listadd]: ./screenshots/ListAdd.PNG
+[listdelete]: ./screenshots/JournalListDelete.PNG
+[listedit]: ./screenshots/Editing.PNG
+[listedited]: ./screenshots/EditWorks.PNG
 
-[about]: ./screenshots/AboutPage.png
-[contact]: ./screenshots/ContactListWResult.png
-[contactinvalid]: ./screenshots/ContactwInvalid.png
-[references]: ./screenshots/References.png
+[about]: ./screenshots/AboutPage.PNG
+[contact]: ./screenshots/ContactListWResult.PNG
+[contactinvalid]: ./screenshots/ContactwInvalid.PNG
+[references]: ./screenshots/References.PNG
 
