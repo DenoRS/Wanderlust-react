@@ -23,11 +23,20 @@ import {
 
 const entries = [
 	{
-		journal: 'Make React Great Again'
+		journal: 'Journey to Cliffs of Moher'
 	},
 	{
-		journal: 'Eat Dinner'
-	}
+		journal: 'Trip to Italy'
+	},
+  {
+    journal: 'Giants Causeway'
+  },
+  {
+    journal: 'Scuba diving'
+  },
+  {
+    journal: 'Parachuting today, went great'
+  }
 	];
 
 class Layout extends Component {

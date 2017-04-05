@@ -26,22 +26,22 @@ class Contact extends Component{
 	  <Col md={{ size: 6, push: 2, pull: 2, offset: 1 }}>
         <AvForm onSubmit={this.handleSubmit}>
          
-          <AvField name="name" label="Name" required />
+          <AvField name="name" id="name" label="Name" required />
          
           <AvGroup>
-            <Label for="comment">Comment</Label>
+            <Label for="comment" id="name">Comment</Label>
             <AvInput name="comment" id="comment" required />
            
             <AvFeedback>This is an error!</AvFeedback>
           </AvGroup>
           
-          <AvRadioGroup inline name="gender" label="Gender" required>
+          <AvRadioGroup inline name="gender" id="gender" label="Gender" required>
             <AvRadio label="Male" value="Male" id="radioOption1" />
             <AvRadio label="Female" value="Female" id="radioOption2" />
            
           </AvRadioGroup>
        
-          <AvField type="select" name="rating" label="Option" helpMessage="Select a rating">
+          <AvField type="select" id="rating" name="rating" label="Rating" helpMessage="Select a rating">
             <option>1</option>
             <option>2</option>
             <option>3</option>

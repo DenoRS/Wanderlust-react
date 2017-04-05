@@ -36,7 +36,7 @@ class JournalList extends Component {
 		
             <table>
                
-                <tbody>
+                <tbody className="listItems">
 					{this.props.children}
                    
                 </tbody>
